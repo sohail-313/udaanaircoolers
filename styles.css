@@ -7,11 +7,20 @@ body{
 .container {
     max-width: 900px;
   }
-  
   #image-gallery img {
-    margin-bottom: 20px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
   }
+
   
+  .price-tag {
+    font-size: 16px;
+    color: #fff;
+    background-color: #92313177;
+    padding: 5px;
+    text-align: center;
+  }
 
 
   .modal {

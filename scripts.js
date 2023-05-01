@@ -1,3 +1,13 @@
+const price = [
+  '₹1850', '₹2500', '₹2100', '₹2200', '₹1650', '₹1900', '₹1500', '₹2400', '₹2350', '₹2250',
+  '₹2500', '₹2250', '₹2100', '₹2350', '₹2350', '₹2200', '₹1750', '₹1500', '₹1400', '₹3150',
+  '₹1850', '₹2500', '₹2100', '₹2200', '₹1650', '₹1900', '₹1500', '₹2400', '₹2350', '₹2250',
+  '₹1850', '₹2500', '₹2100'
+]
+
+//Diet,
+
+
 // Function to add images to the gallery
 function addImagesToGallery() {
   let gallery = document.getElementById('image-gallery');
@@ -8,6 +18,12 @@ function addImagesToGallery() {
     img.src = `images/${i}.png`; // Replace 'image' with your image file name and extension
     img.classList.add('img-fluid');
     col.appendChild(img);
+
+    let priceTag = document.createElement('div');
+    priceTag.innerHTML = price[i];
+    priceTag.classList.add('price-tag');
+    col.appendChild(priceTag);
+
     gallery.appendChild(col);
   }
 }
@@ -19,44 +35,6 @@ addImagesToGallery();
 
 
 
-//   // Function to display login modal on page load
-// function displayLoginModal() {
-//   $('#loginModal').modal('show');
-// }
-
-// // Call the function to display the login modal on page load
-// $(document).ready(function() {
-//   displayLoginModal();
-// });
-
-
-// // Function to handle form submission
-// function handleFormSubmit(e) {
-//   e.preventDefault(); // prevent default form submission behavior
-
-//   // Get the values of the ID and password fields
-//   var id = $('#idInput').val();
-//   var password = $('#passwordInput').val();
-
-//   // Perform any necessary validation here...
-
-//   // If the form is valid, manually close the modal
-//   $('#loginModal').modal('hide');
-// }
-
-// // Attach the form submission handler to the Login button
-// $('#loginBtn').click(handleFormSubmit);
-
-
-
-// modal.addEventListener('click', function(event) {
-//   if (event.target === modal) {
-//     event.stopPropagation();
-//   }
-// });
-
-
-
 
 var formSubmitted = false;
 window.addEventListener('scroll', function () {
@@ -64,7 +42,7 @@ window.addEventListener('scroll', function () {
   var scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
   var pageHeight = document.documentElement.scrollHeight;
   var body = document.getElementsByTagName('body')[0];
-  if (scrollPosition > (pageHeight / 3)  && !formSubmitted) {
+  if (scrollPosition > (pageHeight / 6) && !formSubmitted) {
     form.style.display = 'block';
     body.style.overflow = 'hidden';
     window.addEventListener('wheel', preventScrolling, { passive: false });
